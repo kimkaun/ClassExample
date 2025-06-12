@@ -47,8 +47,15 @@ namespace ClassExample
                 Console.WriteLine("Child(string input) : base(input)");
             }
         }
+
+        public static int number = 10;  // 가려진 부모 변수
+
         static void Main(string[] args)
         {
+            int number = 20;        // 섀도잉 예 number 클래스 변수가 지연 변수로 가려짐
+            Console.WriteLine(number);
+            Console.WriteLine(Program.number);
+
             Child childA = new Child();
             Child childB = new Child("string");
 
